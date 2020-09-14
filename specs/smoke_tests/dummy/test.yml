@@ -1,0 +1,7 @@
+top:
+  level:
+    test: 1
+test:
+  key: foo
+  key2: bar
+foo: bar
