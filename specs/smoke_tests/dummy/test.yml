@@ -4,4 +4,5 @@ top:
 test:
   key: foo
   key2: bar
+  duplicate: true
 foo: bar

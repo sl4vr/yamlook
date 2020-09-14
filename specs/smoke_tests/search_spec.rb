@@ -19,6 +19,14 @@ describe Yamlook::Search do
       end
     end
 
+    it 'searches correctly for several occurrences' do
+      assert_output(
+        %r{dummy/test\.yml:7:14\ntrue\n\n.+dummy/test\.yaml:4:14\ntrue}
+      ) do
+        Yamlook::Search.perform(%w[test duplicate])
+      end
+    end
+
     it 'outputs that nothing found if nothing found' do
       assert_output(/Nothing found./) do
         Yamlook::Search.perform(%w[no such key])

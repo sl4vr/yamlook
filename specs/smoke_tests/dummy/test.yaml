@@ -1,2 +1,4 @@
 wubba.lubba:
   dub.dub: bar
+test:
+  duplicate: true
