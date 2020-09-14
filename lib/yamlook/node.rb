@@ -6,13 +6,6 @@ module Yamlook
     attr_reader :value, :line, :column
     attr_accessor :filename
 
-    def initialize(value:, line:, column:, filename: nil)
-      @value = value
-      @line = line
-      @column = column
-      @filename = filename
-    end
-
     def self.from_scalar(scalar)
       return unless scalar
 
@@ -21,6 +14,13 @@ module Yamlook
         line: scalar.start_line + 1,
         column: scalar.start_column + 1
       )
+    end
+
+    def initialize(value:, line:, column:, filename: nil)
+      @value = value
+      @line = line
+      @column = column
+      @filename = filename
     end
 
     def to_s

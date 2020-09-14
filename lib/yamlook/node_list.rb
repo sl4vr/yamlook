@@ -8,12 +8,12 @@ module Yamlook
   class NodeList
     attr_reader :nodes
 
-    def initialize(nodes)
-      @nodes = nodes
-    end
-
     def self.from_mapping(mapping)
       new(mapping.children)
+    end
+
+    def initialize(nodes)
+      @nodes = nodes
     end
 
     def search(keys)
