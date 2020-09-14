@@ -12,15 +12,18 @@ module Yamlook
       @nodes = nodes
     end
 
+    def self.from_mapping(mapping)
+      new(mapping.children)
+    end
+
     def search(keys)
       keys.map.with_index do |_, index|
         key = keys[0..index].join('.')
         rest_keys = keys[index + 1..-1]
-
         result = find(key)
 
         case result
-        when NodeList then result.search(rest_keys)
+        when Mapping then NodeList.from_mapping(result).search(rest_keys)
         when Scalar then Node.from_scalar(result)
         end
       end
@@ -29,16 +32,11 @@ module Yamlook
     private
 
     def find(key)
-      scalar_index = find_scalar_index(key)
-      return unless scalar_index
-
-      result = nodes[scalar_index + 1]
-      return NodeList.new(result.children) if result.is_a?(Mapping)
-
-      result
+      key_node_index = find_key_node_index(key)
+      nodes[key_node_index + 1] if key_node_index
     end
 
-    def find_scalar_index(key)
+    def find_key_node_index(key)
       nodes.find_index { |node| node.is_a?(Scalar) && node.value == key }
     end
   end
