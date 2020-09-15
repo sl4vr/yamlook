@@ -17,7 +17,7 @@ module Yamlook
     end
 
     def search(keys)
-      keys.map.with_index do |_, index|
+      keys.each_index.map do |index|
         key = keys[0..index].join('.')
         rest_keys = keys[index + 1..-1]
         result = find(key)
