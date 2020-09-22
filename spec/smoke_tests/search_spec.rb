@@ -33,7 +33,8 @@ describe Yamlook::Search do
         %r{
           Found\s2\soccurrences:\n
           .+dummy/test\.yml:7:14\n
-          true\n\n
+          true\n
+          \n
           .+dummy/test\.yaml:4:14\n
           true
         }x
