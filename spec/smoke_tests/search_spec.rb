@@ -5,6 +5,7 @@ $LOAD_PATH.unshift("#{__dir__}/../../lib")
 require 'minitest/autorun'
 require 'yamlook'
 
+# rubocop:disable Metrics/BlockLength
 describe Yamlook::Search do
   describe '.perform' do
     it 'searches correctly for nested yaml keys' do
@@ -48,3 +49,4 @@ describe Yamlook::Search do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
