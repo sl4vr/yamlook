@@ -24,7 +24,7 @@ module Yamlook
 
         case result
         when Mapping then NodeList.from_mapping(result).search(rest_keys)
-        when Scalar then Node.from_scalar(result)
+        when Scalar then Node.from_scalar(result) if rest_keys.empty?
         end
       end
     end

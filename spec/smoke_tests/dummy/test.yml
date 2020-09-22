@@ -6,3 +6,7 @@ test:
   key2: bar
   duplicate: true
 foo: bar
+wubba.lubba: dub.dub
+wubba:
+  lubba:
+    dub: dub
