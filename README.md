@@ -5,7 +5,7 @@ or deep configs and you don't know where one or another value comes from.
 
 For instance you have such code:
 ```
-t("admin.marketing.reports.some_report.title"), some_report_path(format: "csv")
+<%= link_to t("admin.marketing.reports.some_report.title"), some_report_path(format: "csv") %>
 ```
 Run `yamlook admin.marketing.reports.some_report.title` in terminal and it will show up all occurrences of that value
 in your internationalization yaml files. If you have all the internationalization in one yaml file, you will likely
