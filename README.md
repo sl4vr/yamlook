@@ -26,7 +26,7 @@ $ yamlook some.deep.key.in.you.yaml.file
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[sl4vr]/yamlook.
+Bug reports and pull requests are welcome on GitHub at https://github.com/sl4vr/yamlook.
 
 
 ## License
