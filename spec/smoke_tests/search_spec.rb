@@ -48,6 +48,12 @@ describe Yamlook::Search do
         Yamlook::Search.perform(%w[no such key])
       end
     end
+
+    it 'outputs that nothing ti seach for if no keys were given' do
+      assert_output(/Nothing to seach for./) do
+        Yamlook::Search.perform([])
+      end
+    end
   end
 end
 # rubocop:enable Metrics/BlockLength

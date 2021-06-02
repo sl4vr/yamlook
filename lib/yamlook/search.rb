@@ -4,12 +4,16 @@ module Yamlook
   # Searches for occurrences of dot-notated keys in all yaml files
   # of current directory
   module Search
+    NoArgumentsError = Class.new(ArgumentError)
+
     EXTENSIONS = %w[yml yaml].freeze
     PATTERN = EXTENSIONS.map { |ext| ::File.join('**', "*.#{ext}") }.freeze
 
     module_function
 
     def perform(keys)
+      raise NoArgumentsError, 'Nothing to seach for.' if keys.empty?
+
       findings = Dir.glob(PATTERN).map do |filename|
         result = File.new(filename).search(keys)
         print_progress(result)
@@ -17,6 +21,8 @@ module Yamlook
       end
 
       print_result(findings.compact)
+    rescue NoArgumentsError => e
+      puts e.message
     end
 
     def print_progress(result)
