@@ -10,3 +10,5 @@ wubba.lubba: dub.dub
 wubba:
   lubba:
     dub: dub
+en:
+  lang: english

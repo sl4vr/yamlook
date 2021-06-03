@@ -18,6 +18,16 @@ describe Yamlook::Search do
       end
     end
 
+    it 'searches correctly for yaml keys nested in common locale codes' do
+      assert_output(%r{
+        Found\s1\soccurrences:\n
+        .+dummy/test\.yml:14:9\n
+        english
+      }x) do
+        Yamlook::Search.perform(%w[lang])
+      end
+    end
+
     it 'searches correctly for dot-notated yaml keys' do
       assert_output(%r{
         Found\s1\soccurrences:\n

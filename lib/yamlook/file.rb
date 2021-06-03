@@ -12,9 +12,11 @@ module Yamlook
     def search(keys)
       return unless yaml
 
-      findings = root_node_list.search(keys).flatten.compact.map do |finding|
-        finding.filename = filename
-        finding
+      findings = Locale.key_combinations(keys).flat_map do |key_combination|
+        root_node_list.search(key_combination).flatten.compact.map do |finding|
+          finding.filename = filename
+          finding
+        end
       end
 
       findings if findings.any?

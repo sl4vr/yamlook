@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.bindir = 'bin'
   s.executables = ['yamlook']
   s.extra_rdoc_files = ['LICENSE.txt', 'README.md']
-  s.files = `git ls-files bin lib LICENSE.txt README.md`.split($RS)
+  s.files = `git ls-files bin lib LICENSE.txt README.md locales.yaml`.split($RS)
 
   s.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
   s.rubygems_version = '2.5.1'
