@@ -35,11 +35,7 @@ module Yamlook
     end
 
     def root_node_list
-      NodeList.new(root_mapping.children)
-    end
-
-    def root_mapping
-      yaml.children.first
+      NodeList.new(yaml.root.children)
     end
   end
 end

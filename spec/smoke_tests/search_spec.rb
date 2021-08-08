@@ -53,14 +53,25 @@ describe Yamlook::Search do
       end
     end
 
+    it 'searches correctly for dot-notated yaml keys' do
+      skip 'When first node is scalar - file won\'t be parsed properly'
+      assert_output(%r{
+        Found\s1\soccurrences:\n
+        .+dummy/erb\.yaml:6:6\n
+        works
+      }x) do
+        Yamlook::Search.perform(%w[erb])
+      end
+    end
+
     it 'outputs that nothing found if nothing found' do
       assert_output(/Nothing found./) do
         Yamlook::Search.perform(%w[no such key])
       end
     end
 
-    it 'outputs that nothing ti seach for if no keys were given' do
-      assert_output(/Nothing to seach for./) do
+    it 'outputs that nothing to search for if no keys were given' do
+      assert_output(/Nothing to search for./) do
         Yamlook::Search.perform([])
       end
     end

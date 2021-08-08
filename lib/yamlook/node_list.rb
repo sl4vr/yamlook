@@ -17,6 +17,8 @@ module Yamlook
     end
 
     def search(keys)
+      return [] unless nodes
+
       keys.each_index.map do |index|
         key = keys[0..index].join('.')
         rest_keys = keys[index + 1..-1]

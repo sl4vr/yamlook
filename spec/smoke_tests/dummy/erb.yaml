@@ -1,0 +1,6 @@
+### Something ###
+{%
+  var = "test"
+%}
+### Rest ###
+erb: works
