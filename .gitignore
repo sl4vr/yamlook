@@ -1,0 +1,19 @@
+# Ignore gem builds
+*.gem
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+# IDE
+.idea
+.byebug_history
+terminal.glue
+*.swp
+*.iml
+/.vscode
+/developers
+
+# MISC
+.DS_Store

@@ -5,4 +5,6 @@ $LOAD_PATH.unshift("#{__dir__}/../lib")
 
 require 'yamlook'
 
-Yamlook::Search.perform(ARGV[0].split('.'))
+cli_parser = Yamlook::Cli.new(ARGV)
+
+Yamlook::Search.perform(cli_parser.argument.split('.'))
