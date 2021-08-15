@@ -15,6 +15,9 @@ module Yamlook
       opt_parser.parse!(@arguments)
 
       show_help! if @arguments.empty?
+    rescue OptionParser::InvalidOption => e
+      puts e
+      exit 1
     end
 
     def argument
