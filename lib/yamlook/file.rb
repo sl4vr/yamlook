@@ -10,32 +10,17 @@ module Yamlook
     end
 
     def search(keys)
-      return unless yaml
+      file = ::File.read(filename)
+      handler = Handler.new(keys: keys, locales: LOCALES)
+      parser = ::Psych::Parser.new(handler)
 
-      findings = Locale.key_combinations(keys).flat_map do |key_combination|
-        root_node_list.search(key_combination).flatten.compact.map do |finding|
-          finding.filename = filename
-          finding
-        end
+      findings = parser.parse(file).handler.found.map do |value, line, column|
+        "#{filename}:#{line}:#{column}\n#{value}"
       end
 
       findings if findings.any?
-    end
-
-    def yaml
-      @yaml ||= parse_file(filename)
-    end
-
-    private
-
-    def parse_file(filename)
-      ::Psych.parse_file(filename)
     rescue ::Psych::Exception
       nil
-    end
-
-    def root_node_list
-      NodeList.new(yaml.root.children)
     end
   end
 end

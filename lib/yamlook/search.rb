@@ -12,7 +12,7 @@ module Yamlook
     module_function
 
     def perform(keys)
-      raise NoArgumentsError, 'Nothing to seach for.' if keys.empty?
+      raise NoArgumentsError, "Nothing to search for.\n" if keys.empty?
 
       findings = Dir.glob(PATTERN).map do |filename|
         result = File.new(filename).search(keys)
