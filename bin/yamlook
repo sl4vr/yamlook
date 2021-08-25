@@ -7,4 +7,4 @@ require 'yamlook'
 
 cli_parser = Yamlook::Cli.new(ARGV)
 
-Yamlook::Search.perform(cli_parser.argument.split('.'))
+Yamlook::Search.perform(cli_parser.argument.split(Yamlook::SEPARATOR))

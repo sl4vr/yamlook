@@ -1,4 +1,23 @@
+wubba.lubba.dub.dub: bar
 wubba.lubba:
-  dub.dub: bar
-test:
-  duplicate: true
+  go.go:
+    sha: meh
+  dub.dub: bar1
+wubba.lubba:
+  dub.dub: bar2
+net:
+  to: 1
+wubba:
+  lubba:
+    dub:
+      dub: bar3
+en:
+  wubba.lubba.dub.dub: bar4
+de:
+  wubba.lubba:
+    dub.dub: bar5
+nope:
+  en:
+    wubba.lubba.dub.dub: nope
+en.wubba.lubba.dub.dub: bar6
+test.duplicate: true

@@ -1,66 +1,66 @@
+# frozen_string_literal: true
+
 require 'psych'
 
 module Yamlook
   # Handler for Psych::Parser
   class Handler < ::Psych::Handler
     attr_reader :found
-  
+
     def initialize(keys:, locales: [])
+      super()
       @keys = keys
       @locales = locales
       @found = []
-      @level = -1
-      @active = @prev_active = @locale_active = false
-      @start_line = @start_column = nil
-      @offset = 0
+
+      @iterations = []
+      @current_iteration = Iteration.new(active: true)
     end
-  
+
     def event_location(start_line, start_column, _end_line, _end_column)
       @start_line = start_line
       @start_column = start_column
     end
-  
+
     def start_mapping(_anchor, _tag, _implicit, _style)
-      @level += 1
-      @prev_active = @active || top_level?
-      @active = false
+      @iterations.push(@current_iteration.dup)
+      @current_iteration.reset!
     end
-  
+
     def end_mapping
-      @level -= 1
-      @level -= @offset
-      @offset = 0
-      @locale_active = false if top_level?
-    end
-  
-    def scalar(value, _anchor, _tag, _plain, _quoted, _style)
-      if current_level == @keys.size.pred && @active && (current_level.zero? || @prev_active)
-        @found << [value, @start_line.next, @start_column.next]
-      end
-
-      @active, @offset = match(value)
-      @level += @offset
-      @locale_active ||= top_level? && @locales.include?(value)
-    end
-  
-    def top_level?
-      @level.zero?
-    end
-  
-    def current_level
-      @locale_active ? @level.pred : @level
+      @iterations.pop
+      @current_iteration.reset!
     end
 
-    def match(value)
-      return [false, 0] unless @keys[current_level]
+    def scalar(value, _anchor, _tag, _plain, _quoted, _style) # rubocop:disable Metrics/ParameterLists
+      @found << [value, @start_line.next, @start_column.next] if keys_out? && all_active?
 
-      @keys[current_level..-1].each_with_index do |key, index|
-        if value == @keys[current_level..index+current_level].join('.')
-          return [true, index] 
-        end
-      end
+      refresh_current_interation!(value)
+    end
 
-      [false, 0]
+    def refresh_current_interation!(value)
+      value_keys = value.split(SEPARATOR)
+
+      value_keys.shift if current_offset.zero? && LOCALES.include?(value_keys.first)
+
+      @current_iteration.offset = value_keys.count
+      @current_iteration.active = current_keys == value_keys
+    end
+
+    def current_offset
+      @iterations.sum(&:offset)
+    end
+
+    def current_keys
+      @keys.drop(current_offset).take(@current_iteration.offset)
+    end
+
+    def keys_out?
+      current_offset + @current_iteration.offset == @keys.size
+    end
+
+    def all_active?
+      @iterations.any? && @iterations.all?(&:active) && @current_iteration.active
     end
   end
 end

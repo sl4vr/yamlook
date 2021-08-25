@@ -1,176 +1,176 @@
 locales:
-- af
-- sq
-- am
-- ar
-- ar-dz
-- ar-bh
-- ar-eg
-- ar-iq
-- ar-jo
-- ar-kw
-- ar-lb
-- ar-ly
-- ar-ma
-- ar-om
-- ar-qa
-- ar-sa
-- ar-sy
-- ar-tn
-- ar-ae
-- ar-ye
-- hy
-- as
-- az
-- az-az
-- eu
-- be
-- bn
-- bs
-- bg
-- my
-- ca
-- zh
-- zh-cn
-- zh-hk
-- zh-mo
-- zh-sg
-- zh-tw
-- hr
-- cs
-- da
-- dv
-- nl
-- nl-be
-- nl-nl
-- en
-- en-au
-- en-bz
-- en-ca
-- en-cb
-- en-gb
-- en-in
-- en-ie
-- en-jm
-- en-nz
-- en-ph
-- en-za
-- en-tt
-- en-us
-- et
-- mk
-- fo
-- fa
-- fi
-- fr
-- fr-be
-- fr-ca
-- fr-fr
-- fr-lu
-- fr-ch
-- gd
-- gd-ie
-- gl
-- ka
-- de
-- de-at
-- de-de
-- de-li
-- de-lu
-- de-ch
-- el
-- gn
-- gu
-- he
-- hi
-- hu
-- is
-- id
-- it
-- it-it
-- it-ch
-- ja
-- kn
-- ks
-- kk
-- km
-- ko
-- lo
-- la
-- lv
-- lt
-- ms
-- ms-bn
-- ms-my
-- ml
-- mt
-- mi
-- mr
-- mn
-- ne
-- nb
-- no-no
-- nn
-- or
-- pl
-- pt
-- pt-br
-- pt-pt
-- pa
-- rm
-- ro
-- ro-mo
-- ru
-- ru-mo
-- sa
-- sr
-- sr-sp
-- tn
-- sd
-- si
-- sk
-- sl
-- so
-- sb
-- es
-- es-ar
-- es-bo
-- es-cl
-- es-co
-- es-cr
-- es-do
-- es-ec
-- es-sv
-- es-gt
-- es-hn
-- es-mx
-- es-ni
-- es-pa
-- es-py
-- es-pe
-- es-pr
-- es-es
-- es-uy
-- es-ve
-- sw
-- sv
-- sv-fi
-- sv-se
-- tg
-- ta
-- tt
-- te
-- th
-- bo
-- ts
-- tr
-- tk
-- uk
-- ur
-- uz
-- uz-uz
-- vi
-- cy
-- xh
-- yi
-- zu
+  - af
+  - sq
+  - am
+  - ar
+  - ar-dz
+  - ar-bh
+  - ar-eg
+  - ar-iq
+  - ar-jo
+  - ar-kw
+  - ar-lb
+  - ar-ly
+  - ar-ma
+  - ar-om
+  - ar-qa
+  - ar-sa
+  - ar-sy
+  - ar-tn
+  - ar-ae
+  - ar-ye
+  - hy
+  - as
+  - az
+  - az-az
+  - eu
+  - be
+  - bn
+  - bs
+  - bg
+  - my
+  - ca
+  - zh
+  - zh-cn
+  - zh-hk
+  - zh-mo
+  - zh-sg
+  - zh-tw
+  - hr
+  - cs
+  - da
+  - dv
+  - nl
+  - nl-be
+  - nl-nl
+  - en
+  - en-au
+  - en-bz
+  - en-ca
+  - en-cb
+  - en-gb
+  - en-in
+  - en-ie
+  - en-jm
+  - en-nz
+  - en-ph
+  - en-za
+  - en-tt
+  - en-us
+  - et
+  - mk
+  - fo
+  - fa
+  - fi
+  - fr
+  - fr-be
+  - fr-ca
+  - fr-fr
+  - fr-lu
+  - fr-ch
+  - gd
+  - gd-ie
+  - gl
+  - ka
+  - de
+  - de-at
+  - de-de
+  - de-li
+  - de-lu
+  - de-ch
+  - el
+  - gn
+  - gu
+  - he
+  - hi
+  - hu
+  - is
+  - id
+  - it
+  - it-it
+  - it-ch
+  - ja
+  - kn
+  - ks
+  - kk
+  - km
+  - ko
+  - lo
+  - la
+  - lv
+  - lt
+  - ms
+  - ms-bn
+  - ms-my
+  - ml
+  - mt
+  - mi
+  - mr
+  - mn
+  - ne
+  - nb
+  - no-no
+  - nn
+  - or
+  - pl
+  - pt
+  - pt-br
+  - pt-pt
+  - pa
+  - rm
+  - ro
+  - ro-mo
+  - ru
+  - ru-mo
+  - sa
+  - sr
+  - sr-sp
+  - tn
+  - sd
+  - si
+  - sk
+  - sl
+  - so
+  - sb
+  - es
+  - es-ar
+  - es-bo
+  - es-cl
+  - es-co
+  - es-cr
+  - es-do
+  - es-ec
+  - es-sv
+  - es-gt
+  - es-hn
+  - es-mx
+  - es-ni
+  - es-pa
+  - es-py
+  - es-pe
+  - es-pr
+  - es-es
+  - es-uy
+  - es-ve
+  - sw
+  - sv
+  - sv-fi
+  - sv-se
+  - tg
+  - ta
+  - tt
+  - te
+  - th
+  - bo
+  - ts
+  - tr
+  - tk
+  - uk
+  - ur
+  - uz
+  - uz-uz
+  - vi
+  - cy
+  - xh
+  - yi
+  - zu

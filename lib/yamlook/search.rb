@@ -14,7 +14,7 @@ module Yamlook
     def perform(keys)
       raise NoArgumentsError, "Nothing to search for.\n" if keys.empty?
 
-      findings = Dir.glob(PATTERN).map do |filename|
+      findings = Dir.glob(PATTERN).flat_map do |filename|
         result = File.new(filename).search(keys)
         print_progress(result)
         result

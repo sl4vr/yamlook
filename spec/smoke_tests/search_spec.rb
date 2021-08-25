@@ -30,9 +30,27 @@ describe Yamlook::Search do
 
     it 'searches correctly for dot-notated yaml keys' do
       assert_output(%r{
-        Found\s1\soccurrences:\n
-        .+dummy/test\.yaml:2:12\n
-        bar
+        Found\s7\soccurrences:\n
+        .+dummy/test.yaml:1:22\n
+        bar\n
+        \n
+        .+dummy/test.yaml:5:12\n
+        bar1\n
+        \n
+        .+dummy/test.yaml:7:12\n
+        bar2\n
+        \n
+        .+dummy/test.yaml:13:12\n
+        bar3\n
+        \n
+        .+dummy/test.yaml:15:24\n
+        bar4\n
+        \n
+        .+dummy/test.yaml:18:14\n
+        bar5\n
+        \n
+        .+dummy/test.yaml:22:25\n
+        bar6\n
       }x) do
         Yamlook::Search.perform(%w[wubba lubba dub dub])
       end
@@ -45,7 +63,7 @@ describe Yamlook::Search do
           .+dummy/test\.yml:7:14\n
           true\n
           \n
-          .+dummy/test\.yaml:4:14\n
+          .+dummy/test\.yaml:23:17\n
           true
         }x
       ) do
